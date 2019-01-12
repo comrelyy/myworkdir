@@ -1,4 +1,5 @@
 1 git init
 2 git add 20190112.txt
 3 git commit -m "2019011201"   // -m 提交说明
-4 git reset --hard HEAD^  //退回到上个版本
+4 git reset --hard HEAD^  //head 表示当前版本 退回到上个版本 HEAD^^ 上上个版本 HEAD~100上100个版本
+5 git reset --hard 版本号 //可以去到当前版本之后的某个版本
