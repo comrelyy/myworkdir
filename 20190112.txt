@@ -1,0 +1,43 @@
+﻿1 git init
+2 git add 20190112.txt
+3 git commit -m "2019011201"   // -m 提交说明
+4 git reset --hard HEAD^  //head 表示当前版本 退回到上个版本 HEAD^^ 上上个版本 HEAD~100上100个版本
+5 git reset --hard 版本号 //可以去到当前版本之后的某个版本
+6 git log  //查看提交日志
+7 cat 文件名  //查看文件
+8 工作区/暂存区
+	// 工作区 我们能操作的文件，即我们创建的资源库中的文件
+	// 暂存区 .git文件夹中 git add 会把文件提交到暂存区，git commit 将所有的变化从暂存区提交到当前分支
+9 git status  //查看当前工作区中的文件状态，可以查看到冲突
+10 git check -- 文件名 //将指定文件的在工作区中未添加到暂存区的修改全部撤销 即 没有 git add 之后的修改
+11 rm 文件名  // 本地删除文件   git rm 文件名 //从版本库中删除
+12  git remote add origin https://github.com/comrelyy/myworkdir.git //添加到远程仓库
+13 git push -u origin master //将内容推送到远端 并将分支进行关联
+14 git clone 远程git项目地址
+
+|--分支管理
+	|-- 创建与合并分支
+	 >>head指向当前分支，分支的名称指向当前分支
+	 >>git branch "分支名"    //创建分支
+	 >>git branch             //查看当前项目分支
+	 >>git checkout "分支名"  //切换到该分支
+	 >>git checkout -b "分支名"  //创建并切换到该分支
+	 >>git merge "分支名"        //将"分支名"合并到当前分支
+	 >>git branch -d "分支名"    //删除分支
+	 >>git stash               //隐藏当前分支的修改  |   假设当前分支无法提交，但是需要切换到其他分支处理问题，可以将
+	 >>git stash list         //当前分支的隐藏修改   |	将当前修改隐藏 git stash,在使用git checkout 切换到其他分支，可以通过
+	 >>git stash pop/apply    //恢复当前分支的修改   | git stash list 查看当前分支被隐藏的修改，使用git stash pop 恢复
+	 >>git stash drop        //删除隐藏的修改        |
+	 
+|--git config --list 查看系统设置
+	>>git config --global user.name "" //设置全局用户名; --global user.email "" //设置全局邮件
+|--git diff 查看当前工作区文件与暂存区的差异
+	>>git diff <file> # 比较当前文件和暂存区文件差异 git diff
+	>>git diff <id1><id1><id2> # 比较两次提交之间的差异
+	>>git diff <branch1> <branch2> # 在两个分支之间比较
+	>>git diff --staged # 比较暂存区和版本库差异
+	>>git diff --cached # 比较暂存区和版本库差异
+	>>git diff --stat # 仅仅比较统计信息
+	>>git diff HEAD  //查看工作区与head的差异
+
+  
